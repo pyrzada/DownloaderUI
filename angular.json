@@ -31,10 +31,14 @@
             ],
             "styles": [
               "src/styles.css",
+              "src/assets/app.css",
+              "src/assets/font1.css",
+              "src/assets/font2.css",
+              "src/assets/font-1.css",
               "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "src/assets/app.js",
               "node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
@@ -43,8 +47,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",

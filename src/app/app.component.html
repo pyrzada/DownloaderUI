@@ -1,1 +1,51 @@
-<router-outlet></router-outlet>
+<app-header></app-header>
+<main>
+  <section id="main" class="jumbotron mb-0 pb-3 bg-08003a">
+    <div class="search-block-default-height">
+      <div class="container text-white h-100 container-search">
+        <div class="align-items-center text-center pl-lg-5">
+          <h1 class="mb-3 mt-3 main_title">Online Video Downloader</h1>
+          <div class="row justify-content-center" id="m-form">
+            <div class="col-12 col-md-10 col-lg-6">
+              <!--              <search-form input-placeholder="Paste your video link here" start-button="Download">-->
+              <!--                <input type="hidden" name="_token" value="KIb9CFykmg4IndMVyJRZtTQpIoH6KArvgNBWh0Bt">-->
+              <!--              </search-form>-->
+              <img loading="lazy" src="assets/img/loader-1.svg" id="img" style="display:none" width="60"
+                   height="60">
+            </div>
+          </div>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+
+  <section class="container mt-5 mb-5 align-items-center b-instruction how-to-mp4">
+    <div class="row">
+      <div class="col-md-12 col-lg-12">
+        <div class="media">
+          <div class="media-body">
+            <h2 class="text-center">What is the quality of downloaded videos?</h2>
+            <p class='text-muted text-left'>Our online Youtube downloader can function as an MP4
+              converter. That means you can save high-quality videos from TikTok, Instagram, Facebook
+              and YouTube in MP4 video file format. Our software supports SD, HD, FullHD, 2K, and 4K.
+              If an author uploaded a video in 1080p, you can save it in the same or lower quality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-lg-12">
+        <div class="media">
+          <div class="media-body">
+            <h2 class="text-center">Which browsers does this online video downloader support?</h2>
+            <p class='text-muted text-left'>You can use Google Chrome, Mozilla Firefox, Safari, Opera,
+              and all Chromium-based browsers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<app-footer></app-footer>

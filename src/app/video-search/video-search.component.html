@@ -1,13 +1,72 @@
-<div class="container-fluid custom-search-div">
-  <form class="form" [formGroup]="searchForm" (submit)="searchUrl()">
-    <div class="form-group">
-      <label for="video-search">Search Video</label>
-      <input name="video-search" id="video-search" class="form-control" formControlName="search" required/>
+<div class="container text-white h-100 container-search">
+  <div class="align-items-center text-center pl-lg-5">
+    <div id="m-form" class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-6">
+        <form id="main-form" [formGroup]="searchForm" class="card card-sm" (submit)="searchUrl()">
+          <div class="card-body row no-gutters align-items-center search_form">
+            <div class="col">
+              <div id="div_id_url" class="form-group" style="margin-left: 3%">
+                <div>
+                  <input type="text" name="url" placeholder="Paste your video link here" autofocus="autofocus"
+                         formControlName="search"
+                         required="required" id="id_url" class="textinput textInput form-control">
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <button type="submit" id="search" class="btn btn-lg btn-danger"><span
+                class="d-none d-md-inline">Download</span>
+                <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </form>
+        <img loading="lazy" src="https://ssyoutube.com/img/loader.svg" id="img" width="60" height="60"
+             style="display: none;"></div>
     </div>
-    <button class="btn btn-primary">Search</button>
-  </form>
-  <app-video-info [infoData]="downloadOptions"></app-video-info>
-  <ng-container *ngFor="let urlData of downloadOptions?.url">
-    <app-video-download-options [urls]="urlData"></app-video-download-options>
-  </ng-container>
+  </div>
+</div>
+<div>
+  <div>
+    <div id="convert-result" role="alert"
+         class="row col-lg-8 col-md-10 col-12 mx-auto mt-5 alert alert-primary shadow-lg " *ngIf="downloadOptions">
+      <div class="container bg-08003a"><p class="convert-title">Download video as:</p></div>
+      <div class="container">
+        <div class="row bg-08003a">
+          <app-video-info [infoData]="downloadOptions"></app-video-info>
+          <div class="col-12 col-lg-8 order-2">
+            <div class="col-12 p-0 m-0">
+              <div class="tabs-header row"><a class="video-title col-12 m-0 active-tab"><span><i
+                class="fab fa-youtube"></i> Video </span></a></div>
+            </div>
+            <div class="row m-0">
+              <div class="d-lg-block p-0 col-12">
+                <div id="myTabContent" class="tab-content">
+                  <div id="nav-mp4" class="tab-pane active show">
+                    <table cellspacing="0" class="table table-dark table-striped table-sm mb-0">
+                      <tr *ngFor="let urlData of downloadOptions?.url">
+                        <td scope="row">
+                          <span><strong>{{urlData.quality}}</strong>.{{urlData.ext}}</span>
+                          <span class="no-audio-icon" *ngIf="!urlData.audio">
+                                <i
+                                  class="fas fa-volume-mute"></i></span></td>
+                        <td class="align-middle">
+                          <a id="download-mp4-720-audio" class="btn" [href]="urlData.url">
+                            <i
+                              class="fas fa-download"></i>
+                            Download
+                          </a></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!----></div>
+
+<div class="container text-white h-100 find-block mt-5 find-section">
+  <div class="find-block col-lg-8"></div>
 </div>

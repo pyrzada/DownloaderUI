@@ -24,7 +24,6 @@ export class VideoSearchComponent implements OnInit {
   searchUrl() {
     this.utilsService.searchUrl(this.searchForm.value.search).subscribe((data) => {
       this.downloadOptions = data;
-      debugger
     })
   }
 }

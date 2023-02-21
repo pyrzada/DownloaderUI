@@ -1,17 +1,9 @@
-<ng-container *ngIf="infoData">
-  <div class="container-fluid">
-    <h3>Information</h3>
-    <label> Title : {{infoData.meta.title}}</label>
-    <label> Source : {{infoData.meta.source}}</label>
-    <label> Duration : {{infoData.meta.duration}}</label>
-    <label> Tags : {{infoData.meta.tags}}</label>
-  </div>
-  <div class="container-fluid">
-    <img class="img-thumbnail img-fluid" [src]="infoData.thumb" alt="source image not available">
-  </div>
-  <div class="container-fluid">
-    <h3>Video Quality Available</h3>
-    <span class="badge bg-primary" *ngFor="let quality of infoData.video_quality">{{quality}}</span>
-
-  </div>
-</ng-container>
+<div class="col-12 col-md-4 col-lg-4 order-12 order-lg-1 mt-3 mx-auto result-col-thumb">
+  <img
+    [src]="infoData.thumb"
+    [alt]="infoData.meta.title" class="card-img-top img-fluid rounded ">
+  <h6 class="text-white">
+    {{infoData.meta.title}}
+  </h6>
+  <p class="text-white">Duration: {{infoData.meta.duration}}</p>
+</div>
