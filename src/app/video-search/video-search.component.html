@@ -1,0 +1,13 @@
+<div class="container-fluid custom-search-div">
+  <form class="form" [formGroup]="searchForm" (submit)="searchUrl()">
+    <div class="form-group">
+      <label for="video-search">Search Video</label>
+      <input name="video-search" id="video-search" class="form-control" formControlName="search" required/>
+    </div>
+    <button class="btn btn-primary">Search</button>
+  </form>
+  <app-video-info [infoData]="downloadOptions"></app-video-info>
+  <ng-container *ngFor="let urlData of downloadOptions?.url">
+    <app-video-download-options [urls]="urlData"></app-video-download-options>
+  </ng-container>
+</div>

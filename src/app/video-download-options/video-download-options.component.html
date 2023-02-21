@@ -1,0 +1,10 @@
+<ng-container *ngIf="urls">
+  <div class="container-fluid border-2 flex-column">
+    <label>Title: {{urls.attr.title}}</label>
+    <label>Quality: {{urls.qualitynumber}}</label>
+    <label>Has Audio: {{urls.audio ? 'Yes' : 'No'}}</label>
+    <label>Filesize: {{urls.filesize / 1000000}} MB</label>
+    <a [href]="urls.url" target="_blank">Download</a>
+  </div>
+  <hr>
+</ng-container>

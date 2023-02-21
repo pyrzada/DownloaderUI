@@ -3,14 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { VideoSearchComponent } from './video-search/video-search.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import { VideoDownloadOptionsComponent } from './video-download-options/video-download-options.component';
+import { VideoInfoComponent } from './video-info/video-info.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VideoSearchComponent,
+    VideoDownloadOptionsComponent,
+    VideoInfoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
